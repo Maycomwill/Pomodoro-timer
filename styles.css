@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root{
+  font-size: 62.5%;
+
+  --dark_gray: #121214;
+  --light_gray: #f5f5f5;
+  --medium_gray: #bdbdbd;
+  --pomodoro_100: #ffd1c8;
+  --pomodoro_200: #ffb3a3;
+  --pomodoro_500: #ff6347;
+  --pomodoro_700: #b34832;
+  --complementary_: #0200A2;
+  --complementary_2: #acf100;
+  --linear_gradient: linear-gradient(to bottom, #FF6347 0%, #F05438 100%);
+}
+
+body *{
+  font-family: 'Poppins', sans-serif;
+  color: var(--light_gray)
+}
+
+body {
+  background: var(--pomodoro_500);
+  background-image: var(--linear_gradient) no-repeat cover
+}
+
+a{
+  text-decoration: none;
+}
+
+.header-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  border-bottom: 1px solid var(--light_gray)
+}
+
+.header-logo img{
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
+.header-text{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.first{
+  color: var(--complementary_)
+}
+
+.second {
+  color: var(--complementary_2)
+}
+
+.pomodoro-timer{
+  display: flex;
+  flex: 1;
+  gap: 3.2 rem;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1.6rem;
+}
+
+.clock{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  gap: .8rem;
+}
+
+.modes-selection{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modes-label{
+  font-size: 1.6rem;
+}
+
+.modes-selection .modes-buttons{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 1.6rem;
+  margin-top: .8rem;
+}
+
+.modes-selection button{
+  width: 100%;
+  background-color: var(--light_gray);
+  padding: .4rem 1.2rem;
+  border: 0;
+  border-radius: .8rem;
+  color: var(--pomodoro_500);
+  transition: all .2s ease;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.modes-selection button:hover{
+  color: var(--light_gray);
+  background-color: var(--pomodoro_200);
+}
+
+.clock-controls{
+  display: flex;
+  gap: .8rem;
+}
+
+.clock-controls > button {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--light_gray);
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+
+.clock-controls > button > .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-controls > button > .icon > i {
+  color: var(--dark_gray)
+}
+
+.clock-controls > button:hover {
+  background-color: var(--medium_gray);
+}
+
+.clock-controls > button:disabled{
+  cursor: auto;
+  background-color: var(--dark_gray);
+}
+
+.clock-controls > button:disabled > .icon > i {
+  color: var(--light_gray)
+}

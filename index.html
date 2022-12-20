@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <title>Pomodoro timer</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapper">
+      <div class="header-logo">
+        <a href="/">
+          <img class="logo" src="./assets/logo.svg" alt="Pomodoro Timer Logo" />
+        </a>
+      </div>
+      <div class="header-text">
+        <a href="/">
+          <span class="header-text first">Pomodoro</span>
+          <span class="header-text second">Timer</span>
+        </a>
+      </div>
+    </div>
+  </header> 
+  <section class="pomodoro-timer">
+    <div class="clock">
+      <div class="clock-spans">
+        <span class="minutes">05</span>
+        <span class="separator">:</span>
+        <span class="seconds">00</span>
+      </div>
+      <div class="clock-controls">
+        <button class="play" onclick="startTimer()"><span class="icon"><i class="fa fa-play"></i></span></button>
+        <button class="stop" onclick="pauseTimer()"><span class="icon"><i class="fa fa-pause"></i></span></button>
+        <button class="stop" onclick="stopTimer()"><span class="icon"><i class="fa fa-stop"></i></span></button>
+        <button class="reset" onclick="resetTimer()"><span class="icon"><i class="fa fa-backward"></i></span></button>
+      </div>
+    </div>
+    <div class="modes-selection">
+      <span class="modes-label">Choose one mode to defines the timer</span>
+      <div class="modes-buttons">
+        <button class="easy" onclick="easySelected()">5 minutes</button>
+        <button class="medium" onclick="mediumSelected()">15 minutes</button>
+        <button class="hard" onclick="hardSelected()">25 minutes</button>
+      </div>
+    </div>
+  </section>
+  <audio class="notification-sound">
+    <source src="./assets/mixkit-happy-bells-notification-937.mp3" type="audio/mpeg">
+  </audio>
+  <script src="./scripts.js"></script>
+</body>
+
+</html>
