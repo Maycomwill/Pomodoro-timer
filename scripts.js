@@ -11,33 +11,39 @@ const stopButton = document.querySelector(".stop")
 const resetButton = document.querySelector(".reset")
 
 let mode = "easy"
-let minutesValue = 5
-let INITIAL_SECONDS_AMOUNT = 300
+let INITIAL_SECONDS_AMOUNT = 300 // 5 minutes * 60 = 300 seconds
 let secondsToDecress = INITIAL_SECONDS_AMOUNT;
 
-function easySelected() {
-  mode = "easy";
-  minutesElement.innerHTML = "05"
-  secondsElement.innerHTML = "00"
-  clearInterval(timer)
-  playButton.removeAttribute('disabled')
-  defineTimer()
-}
-function mediumSelected() {
-  mode = "medium";
-  minutesElement.innerHTML = "15"
-  secondsElement.innerHTML = "00"
-  clearInterval(timer)
-  playButton.removeAttribute('disabled')
-  defineTimer()
-}
-function hardSelected() {
-  mode = "hard"
-  minutesElement.innerHTML = "25"
-  secondsElement.innerHTML = "00"
-  clearInterval(timer)
-  playButton.removeAttribute('disabled')
-  defineTimer()
+function selectMode(mode) {
+  console.log(mode)
+  if (mode === 'easy') {
+    return (
+      mode = "easy",
+      minutesElement.innerHTML = "05",
+      secondsElement.innerHTML = "00",
+      clearInterval(timer),
+      playButton.removeAttribute('disabled'),
+      defineMode()
+    )
+  } else if (mode === 'medium') {
+    return (
+      mode = "medium",
+      minutesElement.innerHTML = "15",
+      secondsElement.innerHTML = "00",
+      clearInterval(timer),
+      playButton.removeAttribute('disabled'),
+      defineMode()
+    )
+  } else if (mode === 'hard') {
+    return (
+      mode = "hard",
+      minutesElement.innerHTML = "25",
+      secondsElement.innerHTML = "00",
+      clearInterval(timer),
+      playButton.removeAttribute('disabled'),
+      defineMode()
+    )
+  }
 }
 
 function convertMinutesToSeconds(minutes) {
@@ -47,16 +53,13 @@ function convertMinutesToSeconds(minutes) {
   )
 }
 
-function defineTimer() {
+function defineMode() {
   if (mode === "easy") {
-    minutesValue = 5
-    convertMinutesToSeconds(minutesValue)
+    convertMinutesToSeconds(5)
   } else if (mode === "medium") {
-    minutesValue = 15;
-    convertMinutesToSeconds(minutesValue)
+    convertMinutesToSeconds(15)
   } else if (mode === "hard") {
-    minutesValue = 25
-    convertMinutesToSeconds(minutesValue)
+    convertMinutesToSeconds(25)
   }
 }
 
@@ -104,14 +107,14 @@ function stopTimer() {
   console.log("timer stopped")
   playButton.removeAttribute('disabled')
   clearInterval(timer)
-  defineTimer()
+  defineMode()
 }
 
 function resetTimer() {
   console.log("timer reseted")
   playButton.removeAttribute('disabled')
   clearInterval(timer)
-  defineTimer()
-  minutesElement.innerHTML = Math.floor(INITIAL_SECONDS_AMOUNT/60).toString().padStart(2,"0")
+  defineMode()
+  minutesElement.innerHTML = Math.floor(INITIAL_SECONDS_AMOUNT / 60).toString().padStart(2, "0")
   secondsElement.innerHTML = String(INITIAL_SECONDS_AMOUNT % 60).padStart(2, "0")
 }
